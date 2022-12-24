@@ -4,7 +4,7 @@ import cors from "cors"
 
 const app = express()
 const port = process.env.PORT || 5000
-const mongodbURI = process.env.mongodbURI || "mongodb+srv://Syedmoiz7:javascript@cluster0.3psj2vc.mongodb.net/?retryWrites=true&w=majority"
+const mongodbURI = process.env.mongodbURI || "mongodb+srv://dbmoiz:dbmoiz@cluster0.3psj2vc.mongodb.net/?retryWrites=true&w=majority"
 
 app.use(cors());
 app.use(express.json())
