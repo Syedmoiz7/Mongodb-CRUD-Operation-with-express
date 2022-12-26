@@ -65,10 +65,6 @@ app.post('/product', (req, res) => {
       }
     })
 
-  // res.send({
-  //   message: "product added successfully"
-  // });
-
 })
 
 
