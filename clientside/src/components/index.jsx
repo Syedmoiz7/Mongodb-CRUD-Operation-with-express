@@ -18,7 +18,7 @@ function Render() {
         try {
             const response = await axios.get(`${baseUrl}/products`)
             console.log("response: ", response.data);
-            setProducts(response.data.data)
+            setProducts(response.data.data.reverse())
 
         } catch (error) {
             console.log("error in getting products ", error);
@@ -197,21 +197,21 @@ function Render() {
 
             <div>
                 {products.map((eachProduct, i) => (
-                    <div key={eachProduct.id} className="productCont">
+                    <div key={i} className="productCont">
                         <h2>{eachProduct.name}</h2>
-                        <p>{eachProduct.id}</p>
+                        <p>{eachProduct._id}</p>
                         <h5>{eachProduct.price}</h5>
                         <p>{eachProduct.description}</p>
 
                         <button onClick={() => {
-                            deleteProduct(eachProduct.id)
+                            deleteProduct(eachProduct._id)
                         }}>Delete</button>
 
                         <button onClick={() => {
                             editMode(eachProduct)
                         }}>Edit</button>
 
-                        {(isEditMode && editingProduct.id === eachProduct.id) ?
+                        {(isEditMode && editingProduct._id === eachProduct._id) ?
                             <div>
                                 <form onSubmit={editFormik.handleSubmit}>
                                     <input
