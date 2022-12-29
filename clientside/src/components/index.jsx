@@ -127,7 +127,7 @@ function Render() {
         onSubmit: (values) => {
             console.log("values: ", values);
 
-            axios.put(`${baseUrl}/product/${editingProduct.id}`, {
+            axios.put(`${baseUrl}/product/${editingProduct._id}`, {
                 name: values.productName,
                 price: values.productPrice,
                 description: values.productDescription
